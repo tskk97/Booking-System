@@ -4,3 +4,4 @@ from flask_sqlalchemy import SQLAlchemy
 db = SQLAlchemy()
 
 from app.main.models.UsersModel import UsersModel
+from app.main.models.BooksModel import BooksModel
