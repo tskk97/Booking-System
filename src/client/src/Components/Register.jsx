@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from './Navbar'
 import { userRegister } from '../Redux/Register/actions'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 
 class Register extends React.Component{
     constructor(props){

@@ -1,8 +1,10 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import { connect } from 'react-redux'
 
 class Navbar extends React.Component{
     render(){
+        const { isAuth, userData } = this.props
         return(
             <div>
                 <nav className="navbar navbar-expand-lg navbar-dark bg-danger h5 py-4">
@@ -16,10 +18,19 @@ class Navbar extends React.Component{
                             <NavLink to="/register" className="nav-link mx-4" activeClassName="active">Register</NavLink>
                         </div>
                     </div>
+                    <span className={isAuth ? "navbar-brand" : "d-none"}>{userData['name']}</span>
+                    {/* <span className="navbar-brand">Sai</span> */}
                 </nav>
             </div>
         )
     }
 }
 
-export default Navbar
+const mapStateToProps = state => ({
+    isAuth: state.login.isAuth,
+    isLogin: state.login.isLogin,
+    message: state.login.message,
+    userData: state.login.userData
+})
+
+export default connect(mapStateToProps)(Navbar);

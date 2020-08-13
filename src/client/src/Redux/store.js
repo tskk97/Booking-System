@@ -2,7 +2,7 @@ import {createStore, combineReducers, applyMiddleware, compose} from 'redux'
 import thunk from "redux-thunk";
 import registerReducer from './Register/registerReducer'
 import loginReducer from './Login/loginReducer'
-// import reducerStays from './Stays/reducerStays';
+import allBooksReducer from './ViewAllBooks/allBooksReducer';
 // import reducerEntity from './EntityDetails/reducerEntity';
 // import reducerBooking from './Booking/reducerBooking'
 
@@ -10,7 +10,7 @@ import loginReducer from './Login/loginReducer'
 const rootReducer =combineReducers({
     register: registerReducer,
     login: loginReducer,
-    // staysSearch:reducerStays,
+    allbooks: allBooksReducer,
     // entityList:reducerEntity,
     // bookingList:reducerBooking
 })
